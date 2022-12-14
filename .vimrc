@@ -32,9 +32,9 @@ set display=lastline     " 避免折行后某一行不见
 set fillchars=vert:\ ,stl:\ ,stlnc:\   
                          " 在分割窗口间留出空白
 set autochdir            " 移至当前文件所在目录
-"set foldmethod=indent   " 根据缩进进行折叠
-set foldmethod=marker    " 根据标志进行折叠
-set tags=~/path/tags     "
+set foldmethod=indent   " 根据缩进进行折叠
+"set foldmethod=marker    " 根据标志进行折叠
+"set tags=~/path/tags     "
 set fileformat=unix      " 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 快捷键设置
@@ -140,5 +140,5 @@ if filereadable(expand($HOME . '/.vimrc.nerdtree'))
     source $HOME/.vimrc.nerdtree
 endif
 
-" colorscheme onedark
-colorscheme molokai
+colorscheme onedark
+" colorscheme molokai
