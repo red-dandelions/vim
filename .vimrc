@@ -2,8 +2,8 @@
 " 基础设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible         " 设置不兼容原始vi模式
-filetype on              " 设置开启文件类型侦测
-filetype plugin on       " 设置加载对应文件类型的插件
+filetype off             " 设置开启文件类型侦测
+"filetype plugin on       " 设置加载对应文件类型的插件
 set noeb                 " 关闭错误的提示
 syntax enable            " 开启语法高亮功能
 syntax on                " 自动语法高亮
@@ -112,15 +112,19 @@ set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 插件列表
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
+" 设置包括vundle和初始化相关的runtime path
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/plugged')              " 指定安装插件的目录
 
-Plug 'scrooloose/nerdtree'                     " 目录树
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " 目录树美化
-Plug 'vim-airline/vim-airline'                 " 状态栏美化
-Plug 'vim-airline/vim-airline-themes'          " 状态栏美化主题
-Plug 'luochen1990/rainbow'                     " 彩虹括号
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'                     " 目录树
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' " 目录树美化
+Plugin 'vim-airline/vim-airline'                 " 状态栏美化
+Plugin 'vim-airline/vim-airline-themes'          " 状态栏美化主题
+Plugin 'luochen1990/rainbow'                     " 彩虹括号
 
-call plug#end()            
+call vundle#end()            
+filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 插件设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,4 +145,4 @@ if filereadable(expand($HOME . '/.vimrc.nerdtree'))
 endif
 
 colorscheme onedark
-" colorscheme molokai
+"colorscheme molokai
